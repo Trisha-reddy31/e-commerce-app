@@ -1,0 +1,20 @@
+<div class="container">      
+  <div class="row"> 
+    <% @toy_gallery.each do |puzzle| %>  
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="box">
+          <div class="img-box text-center">
+<%= image_tag puzzle.main_image, height: "100", width: "100" %>
+          </div>
+          <div class="detail-box">
+            <h6><b>Name:</b> <%= puzzle.name %></h6>
+            <h6><b>Price:</b> <%= puzzle.price %></h6>
+          </div>
+          <div class="text-center mt-2">
+<%= button_to 'Add to Cart', line_items_path(toystore_id: puzzle.id), method: :post %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

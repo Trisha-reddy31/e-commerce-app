@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <% if flash[:notice] %>
+    <div class="alert alert-success text-center">
+      ✅ <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4">🛡️ Admin Login</h2>
+
+          <%= form_with url: "/admin/login", method: :post, local: true do |form| %>
+            <!-- Username -->
+            <div class="mb-3">
+              <%= form.label :username, "👤 Username", class: "form-label" %>
+              <%= form.text_field :username, class: "form-control", placeholder: "Enter username" %>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <%= form.label :password, "🔒 Password", class: "form-label" %>
+              <%= form.password_field :password, class: "form-control", placeholder: "Enter password" %>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid mt-4">
+              <%= form.submit "🚪 Login", class: "btn btn-primary btn-lg" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

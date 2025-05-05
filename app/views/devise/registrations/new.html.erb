@@ -1,0 +1,43 @@
+<h2 class="text-center mb-4">📝 Sign Up</h2>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="form-group mb-3">
+              <%= f.label :email, class: "form-label" do %>📧 Email<% end %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg" %>
+            </div>
+
+            <div class="form-group mb-3">
+              <%= f.label :password, class: "form-label" do %>🔒 Password<% end %>
+              <% if @minimum_password_length %>
+                <small class="form-text text-muted ms-1">
+                  (minimum <%= @minimum_password_length %> characters)
+                </small>
+              <% end %>
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-lg" %>
+            </div>
+
+            <div class="form-group mb-3">
+              <%= f.label :password_confirmation, class: "form-label" do %>🔁 Confirm Password<% end %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-lg" %>
+            </div>
+
+            <div class="form-group text-center mt-4">
+              <%= f.submit "✅ Create Account", class: "btn btn-success btn-lg w-100" %>
+            </div>
+          <% end %>
+
+          <div class="text-center mt-4">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

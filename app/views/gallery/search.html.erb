@@ -1,0 +1,23 @@
+<h1>Gallery#search</h1>
+<p>Find me in app/views/gallery/search.html.erb</p>
+<h1>Search Results</h1>
+<table>
+<tr>
+<% count=0 %>
+<% @search_results.each do |main|%>
+
+<% if (count % 3) == 0%>
+</tr>
+<tr>
+<% end %>
+<% count += 1 %>
+<td>
+  <%= image_tag main.main_image, height: "100", width: "100" %><br />
+  <%= main.name %><br />
+  Name: <%= main.name %><br />
+  Price: <%= main.price %><br />
+  <%= button_to 'Add to Cart', line_items_path(store_id: main.id) %>
+</td>
+<% end %>
+</tr>
+</table>

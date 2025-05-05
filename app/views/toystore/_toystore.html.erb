@@ -1,0 +1,30 @@
+<div id="<%= dom_id toystore %>">
+
+<%= image_tag toystore.main_image,height: "100",width: "100" if toystore.main_image.attached? %>
+
+  <p>
+    <strong>Name:</strong>
+    <%= toystore.name %>
+  </p>
+
+  <p>
+    <strong>Brand:</strong>
+    <%= toystore.brand %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= toystore.price %>
+  </p>
+
+  <p>
+    <strong>Toytype:</strong>
+    <%= toystore.toytype %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= toystore.description %>
+  </p>
+
+</div>

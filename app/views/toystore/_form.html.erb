@@ -1,0 +1,44 @@
+<%= form_with(model: toystore) do |form| %>
+  <% if toystore.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(toystore.errors.count, "error") %> prohibited this toystore from being saved:</h2>
+
+      <ul>
+        <% toystore.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :brand, style: "display: block" %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div>
+    <%= form.label :price, style: "display: block" %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :toytype, style: "display: block" %>
+    <%= form.text_field :toytype %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+  <%= form.label :main_image %>
+<%= form.file_field :main_image %>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<% content_for :title, "Editing toystore" %>
+
+<h1>Editing toystore</h1>
+
+<%= render "form", toystore: @toystore %>
+
+<br>
+
+<div>
+  <%= link_to "Show this toystore", @toystore %> |
+  <%= link_to "Back to toystores", toystores_path %>
+</div>

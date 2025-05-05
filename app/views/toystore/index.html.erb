@@ -1,0 +1,21 @@
+<p class="text-success"><%= notice %></p>
+
+<% content_for :title, "toystores" %>
+
+<h1 class="text-center">toystores</h1>
+
+<div id="toystores" class="container">
+  <div class="row">
+    <% @toystores.each do |toystore| %>
+      <div class="col-md-4 mb-4">
+        <%= render toystore %>
+        <p class="text-center">
+<%= link_to "Show this toystore", toystore_path(toystore.id) %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "New toystore", new_toystore_path, class: "btn btn-success" %>
+</div>

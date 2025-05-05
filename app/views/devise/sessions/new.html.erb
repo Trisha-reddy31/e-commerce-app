@@ -1,0 +1,45 @@
+<h2 class="text-center mb-4">🔐 Log In</h2>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <!-- Email Field -->
+            <div class="form-group mb-3">
+              <%= f.label :email, class: "form-label" do %>📧 Email<% end %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg" %>
+            </div>
+
+            <!-- Password Field -->
+            <div class="form-group mb-3">
+              <%= f.label :password, class: "form-label" do %>🔒 Password<% end %>
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-lg" %>
+            </div>
+
+            <!-- Remember Me Checkbox -->
+            <% if devise_mapping.rememberable? %>
+              <div class="form-check mb-3">
+                <%= f.check_box :remember_me, class: "form-check-input", id: "remember_me" %>
+                <%= f.label :remember_me, "💾 Remember Me", class: "form-check-label", for: "remember_me" %>
+              </div>
+            <% end %>
+
+            <!-- Submit Button -->
+            <div class="form-group text-center mt-4">
+              <%= f.submit "✅ Log In", class: "btn btn-success btn-lg w-100" %>
+            </div>
+          <% end %>
+
+          <!-- Links Section -->
+          <div class="text-center mt-4">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

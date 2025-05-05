@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @toystore %>
+
+<div>
+  <%= link_to "Edit this toystore", edit_toystore_path(@toystore) %> |
+  <%= link_to "Back to toystores", toystores_path %>
+
+  <%= button_to "Destroy this toystore", @toystore, method: :delete %>
+</div>
